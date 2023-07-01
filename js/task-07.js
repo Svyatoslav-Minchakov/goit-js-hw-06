@@ -1,3 +1,4 @@
+window.addEventListener('load', changeValue)
 const ranger = document.querySelector('#font-size-control');
 const rangeText = document.querySelector('#text');
 

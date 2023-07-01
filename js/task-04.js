@@ -12,13 +12,11 @@ decrementButton.addEventListener('click', subDigit);
 function addDigit() {
   counter += 1;
   spanCaunter.textContent = counter;
-  return
 }
 
 function subDigit() {
   counter -= 1;
   spanCaunter.textContent = counter;
-  return 
 }
 
 

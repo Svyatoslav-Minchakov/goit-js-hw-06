@@ -15,12 +15,13 @@ const images = [
 
 const galleryList = document.querySelector('.gallery');
 galleryList.classList.add('task-3_gallery');
+galleryList.setAttribute('style', 'list-style-type: none;');
 console.log(galleryList)
 
 const changedImages = images.map(image => {
   return `
   <li class="task-3_gallery-item">
-  <img src="${image.url}" alt="${image.alt}" class="task-3_gallery-image">
+  <img width = "400" src="${image.url}" alt="${image.alt}" class="task-3_gallery-image">
 </li>`
 }).join('');
 
