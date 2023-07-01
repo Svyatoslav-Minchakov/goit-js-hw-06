@@ -21,7 +21,7 @@ console.log(galleryList)
 const changedImages = images.map(image => {
   return `
   <li class="task-3_gallery-item">
-  <img width = "400" src="${image.url}" alt="${image.alt}" class="task-3_gallery-image">
+  <img width="400" src="${image.url}" alt="${image.alt}" class="task-3_gallery-image">
 </li>`
 }).join('');
 
