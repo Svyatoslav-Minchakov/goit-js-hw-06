@@ -11,14 +11,34 @@ const boxesContainer = document.querySelector('#boxes');
 
 
 
-btnCreate.addEventListener('click', isCreateBoxes);
+btnCreate.addEventListener('click', CreateBoxes);
 btnDestroy.addEventListener('click', isDestroyBoxes);
 
-function isCreateBoxes() {
-  let counter = enterNumber.value
-  let areaCounter = 20;
+const step = Number(enterNumber.getAttribute('step'));
+const minValue = Number(enterNumber.getAttribute('min'));
+const maxValue = Number(enterNumber.getAttribute('max'));
+let amount;
 
-  for(let i = 0; i <  counter; i++) {
+function CreateBoxes(amount) {
+  let counter = enterNumber.value
+  let areaCounter = 30;
+
+  for(let i = 0; i <  counter; i += step) {
+    amount = Number(enterNumber.value)
+    if(amount < minValue || amount > maxValue) {
+      alert('Wrong number');
+      amount = '';
+      break
+    }
+    
+    if( i === 0) {
+      const newBox = document.createElement('div');
+      newBox.style.backgroundColor = getRandomHexColor();
+      newBox.style.width = `${areaCounter}px`;
+      newBox.style.height = `${areaCounter}px`;
+      boxesContainer.appendChild(newBox);
+    }
+    
     areaCounter +=10;
     const newBox = document.createElement('div');
     newBox.style.backgroundColor = getRandomHexColor();
@@ -31,4 +51,5 @@ function isCreateBoxes() {
 
 function isDestroyBoxes() {
   boxesContainer.innerHTML = '';
+  enterNumber.value = '';
 }
